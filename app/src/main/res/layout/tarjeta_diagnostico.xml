@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <!-- Contenedor que actúa como borde -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="4dp"
+            card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="472dp"
+                android:background="@color/Amarillo_App">
+
+
+                <TextView
+                    android:id="@+id/valor_centro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="428dp"
+                    android:layout_toEndOf="@+id/lbl_centro"
+                    android:layout_toRightOf="@+id/lbl_diagnostico"
+                    android:gravity="center_vertical"
+                    android:text="S.S San Benito"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/lbl_centro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="428dp"
+                    android:gravity="center_vertical"
+                    android:text="Centro diag.:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/valor_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="385dp"
+                    android:layout_toEndOf="@+id/lbl_doctor"
+                    android:layout_toRightOf="@+id/lbl_diagnostico"
+                    android:gravity="center_vertical"
+                    android:text="Dra. Teresa"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/lbl_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="385dp"
+                    android:gravity="center_vertical"
+                    android:text="Doctor/a:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/valor_valoracion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="344dp"
+                    android:layout_toEndOf="@+id/lbl_valoracion"
+                    android:layout_toRightOf="@+id/lbl_diagnostico"
+                    android:gravity="center_vertical"
+                    android:text="Maligno"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/lbl_valoracion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="344dp"
+                    android:gravity="center_vertical"
+                    android:text="Valoración:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <ImageView
+                    android:id="@+id/imagen"
+                    android:layout_width="339dp"
+                    android:layout_height="194dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="53dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/lbl_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="114dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:text="Id Diagnóstico:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/valor_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/lbl_id"
+                    android:gravity="center_vertical"
+                    android:text="Large Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    tools:text="1" />
+
+                <TextView
+                    android:id="@+id/lbl_fechaDiag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="262dp"
+                    android:gravity="center_vertical"
+                    android:text="Fecha diag.:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/lbl_diagnostico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="303dp"
+                    android:gravity="center_vertical"
+                    android:text="Diagnóstico:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/valor_diagnostico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="303dp"
+                    android:layout_toRightOf="@+id/lbl_diagnostico"
+                    android:gravity="center_vertical"
+                    android:text="Menaloma"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/valor_fechaDiag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="262dp"
+                    android:layout_toRightOf="@+id/lbl_fechaDiag"
+                    android:gravity="center_vertical"
+                    android:text="12/01/2025"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</RelativeLayout>
