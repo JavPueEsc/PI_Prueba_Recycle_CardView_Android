@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPedidos"
+        android:id="@+id/recyclerViewDiagnosticos"
         android:layout_width="410dp"
         android:layout_height="550dp"
         android:scrollbars="vertical"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewPedidos"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewDiagnosticos"
         app:layout_constraintVertical_bias="0.282" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_marginBottom="16dp"
         android:text="Listado de Diagnosticos"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPedidos"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewDiagnosticos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
