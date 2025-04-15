@@ -64,4 +64,9 @@ dependencies {
     implementation("androidx.camera:camera-extensions:$cameraxVersion")
 
     implementation("org.tensorflow:tensorflow-lite-select-tf-ops:2.12.0")
+
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }
