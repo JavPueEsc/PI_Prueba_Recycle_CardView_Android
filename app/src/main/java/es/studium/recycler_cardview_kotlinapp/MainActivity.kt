@@ -10,6 +10,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import android.util.Base64
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.json.JSONException
@@ -38,6 +39,62 @@ class MainActivity : AppCompatActivity() {
 
         btnAlta=findViewById(R.id.btnAlta)
 
+        cargarDatos()
+
+        //Bloque para actualizar los datos cuando se producen modificaciones
+        val recargar = intent.getBooleanExtra("Recargar", false)
+        if (recargar) {
+            listaDiagnosticos.clear()
+            cargarDatos()
+            //Hay que indicarle al adaptador que los datos han cambiado
+            adaptadorDiagnosticos.notifyDataSetChanged()
+        }
+
+        //Ponemos la lista al adaptador y configuramos el recyclerView
+        val mLayoutManager = LinearLayoutManager(this)
+        recyclerView = findViewById(R.id.recyclerViewDiagnosticos)
+        recyclerView.layoutManager = mLayoutManager
+        recyclerView.itemAnimator = DefaultItemAnimator()
+        recyclerView.adapter = adaptadorDiagnosticos
+
+        //Gestión de pulsaciones sobre las tarjetas del recyclerView
+        recyclerView.addOnItemTouchListener(
+            RecyclerTouchListener(this, recyclerView, object : RecyclerTouchListener.ClickListener {
+                override fun onClick(view: View, position: Int) {
+                    // pasar a la Activity de modificar
+                    var diagnosticoSeleccionado = listaDiagnosticos[position]
+                    var intentModificar = Intent(this@MainActivity,ModificarActivity::class.java)
+                    intentModificar.putExtra("idDiagnostico", diagnosticoSeleccionado.idDiagnostico)
+                    intentModificar.putExtra("imagenDiagnostico", diagnosticoSeleccionado.imagenDiagnostico)
+                    intentModificar.putExtra("fechaDiagnostico", diagnosticoSeleccionado.fechaDiagnostico)
+                    intentModificar.putExtra("diagnosticoDiagnostico", diagnosticoSeleccionado.diagnosticoDiagnostico)
+                    intentModificar.putExtra("gravedadDiagnostico", diagnosticoSeleccionado.gravedadDiagnostico)
+                    intentModificar.putExtra("doctorDiagnostico", diagnosticoSeleccionado.doctorDiagnostico)
+                    intentModificar.putExtra("centroDiagnostico", diagnosticoSeleccionado.centroDiagnostico)
+                    startActivity(intentModificar)
+                }
+
+                override fun onLongClick(view: View, position: Int) {
+                    // acción larga
+                }
+            })
+        )
+
+        //Gestión del botón para pasar a la siguiente Activity
+        btnAlta.setOnClickListener {
+            var intent = Intent(this,prediccionActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+
+    //Metodo para pasar de StringBase64 a ByteArray
+    fun base64AByteArray(base64String: String): ByteArray {
+        return Base64.decode(base64String, Base64.DEFAULT)
+    }
+
+
+    fun cargarDatos(){
         //-----Cominucacion con la API-Rest-----------
         if(android.os.Build.VERSION.SDK_INT > 9){
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
@@ -60,8 +117,8 @@ class MainActivity : AppCompatActivity() {
                     doctorDiagnosticoBD = jsonObject.getString("doctorDiagnostico")
                     centroDiagnosticoBD = jsonObject.getString("centroDiagnostico")
 
-                   listaDiagnosticos.add(ModeloDiagnostico(idDiagnosticoBD,imagenDiagnosticoBD,fechaDiagnosticoBD,diagnosticoDiagnosticoBD,
-                       gravedadDiagnosticoBD,doctorDiagnosticoBD,centroDiagnosticoBD))
+                    listaDiagnosticos.add(ModeloDiagnostico(idDiagnosticoBD,imagenDiagnosticoBD,fechaDiagnosticoBD,diagnosticoDiagnosticoBD,
+                        gravedadDiagnosticoBD,doctorDiagnosticoBD,centroDiagnosticoBD))
                 }
             }
             else{
@@ -72,23 +129,7 @@ class MainActivity : AppCompatActivity() {
             Log.e("MainActivity", "Error al procesar el JSON", e)
         }
 
-        //Ponemos la lista al adaptador y configuramos el recyclerView
-        val mLayoutManager = LinearLayoutManager(this)
-        recyclerView = findViewById(R.id.recyclerViewDiagnosticos)
-        recyclerView.layoutManager = mLayoutManager
-        recyclerView.itemAnimator = DefaultItemAnimator()
-        recyclerView.adapter = adaptadorDiagnosticos
 
-
-        //Gestión del botón para pasar a la siguiente Activity
-        btnAlta.setOnClickListener {
-            var intent = Intent(this,prediccionActivity::class.java)
-            startActivity(intent)
-        }
     }
 
-    //Metodo para pasar de StringBase64 a ByteArray
-    fun base64AByteArray(base64String: String): ByteArray {
-        return Base64.decode(base64String, Base64.DEFAULT)
-    }
 }
