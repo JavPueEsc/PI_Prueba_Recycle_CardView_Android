@@ -1,5 +1,6 @@
 package es.studium.recycler_cardview_kotlinapp
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.StrictMode
@@ -11,6 +12,8 @@ import org.json.JSONObject
 import android.util.Base64
 import android.util.Log
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.json.JSONException
@@ -57,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.adapter = adaptadorDiagnosticos
 
-        //Gestión de pulsaciones sobre las tarjetas del recyclerView
+        //Gestión de pulsaciones sobre las tarjetas del recyclerView -Pulsacion corta
         recyclerView.addOnItemTouchListener(
             RecyclerTouchListener(this, recyclerView, object : RecyclerTouchListener.ClickListener {
                 override fun onClick(view: View, position: Int) {
@@ -75,7 +78,37 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onLongClick(view: View, position: Int) {
-                    // acción larga
+                    // Eliminación de un diagnostico - Pulsación larga
+                    val diagnosticoAEliminar = listaDiagnosticos[position]
+                    val dialogo = AlertDialog
+                        .Builder(this@MainActivity)
+                        .setPositiveButton("Sí", object : DialogInterface.OnClickListener {
+                            override fun onClick(dialogo: DialogInterface, which: Int) {
+                                val eliminacionRemota = EliminacionRemotaDiagnosticos()
+                                val resultado = eliminacionRemota.eliminarDiagnostico(diagnosticoAEliminar.idDiagnostico)
+
+                                if (resultado) {
+                                    listaDiagnosticos.clear()
+                                    cargarDatos()
+                                    adaptadorDiagnosticos.notifyDataSetChanged()
+                                } else {
+                                    Toast.makeText(this@MainActivity, "Error al eliminar el diagnóstico", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                        })
+                        .setNegativeButton("No", object : DialogInterface.OnClickListener {
+                            override fun onClick(dialogo: DialogInterface, which: Int) {
+                                dialogo.dismiss()
+                            }
+                        })
+                        .setTitle("Confirmar eliminación")
+                        .setMessage("¿Desea eliminar este diagnostico?")
+                        .create()
+
+                    //Se pueden cambiar tanto el fondo como el color de los botones del dialogo
+                    //Ver practica 9 Mis pedidos
+
+                    dialogo.show()
                 }
             })
         )
