@@ -20,6 +20,7 @@ import org.json.JSONException
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnAlta : Button
+    private lateinit var btnInforme : Button
     //Variables para la base de datos
     private var listaDiagnosticos: MutableList<ModeloDiagnostico> = mutableListOf()
     val adaptadorDiagnosticos = AdaptadorDiagnosticos(listaDiagnosticos)
@@ -36,11 +37,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var doctorDiagnosticoBD : String
     private lateinit var centroDiagnosticoBD : String
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         btnAlta=findViewById(R.id.btnAlta)
+        btnInforme=findViewById(R.id.btn_informe)
 
         cargarDatos()
 
@@ -116,6 +119,12 @@ class MainActivity : AppCompatActivity() {
         //Gestión del botón para pasar a la siguiente Activity
         btnAlta.setOnClickListener {
             var intent = Intent(this,prediccionActivity::class.java)
+            startActivity(intent)
+        }
+
+        //Gestión del botón para pasar a lActivity de generacion de informe
+        btnInforme.setOnClickListener {
+            var intent = Intent(this,SeleccionarInformeActivity::class.java)
             startActivity(intent)
         }
     }

@@ -10,28 +10,37 @@ import org.json.JSONException
 class AccesoRemotoDiagnosticos {
     //Crear una instancia de okHttpClient
     val client = OkHttpClient()
-    val request = Request.Builder()
-        .url("http://192.168.0.217/ApiRestPracticaPruebaCardView/diagnosticos.php")
-        .build()
     var resultado : JSONArray = JSONArray()
 
+    //Obtener todos los diagnosticos
     fun obtenerListado():JSONArray{
+        val request = Request.Builder()
+            .url("http://192.168.0.217/ApiRestPracticaPruebaCardView/diagnosticos.php")
+            .build()
+        return ejecutarPeticion(request)
+    }
 
-        try{
-            //Realizar la solicitud
+    // Obtener los diagnosticos entre dos fechas
+    fun obtenerListadoEntreFechas(fechaDesde: String, fechaHasta: String): JSONArray {
+        val url = "http://192.168.0.217/ApiRestPracticaPruebaCardView/diagnosticos.php?fechaDesde=$fechaDesde&fechaHasta=$fechaHasta"
+        val request = Request.Builder()
+            .url(url)
+            .build()
+        return ejecutarPeticion(request)
+    }
+
+    // Metodo ejecutar la solicitud
+    private fun ejecutarPeticion(request: Request): JSONArray {
+        try {
             val response = client.newCall(request).execute()
-            //Procesar la respuesta
-            if(response.isSuccessful){
+            if (response.isSuccessful) {
                 resultado = JSONArray(response.body?.string())
+            } else {
+                Log.e("AccesoRemoto", response.message)
             }
-            else{
-                Log.e("AccesoRemoto",response.message)
-            }
-        }
-        catch(e : IOException){
+        } catch (e: IOException) {
             Log.e("AccesoRemoto", e.message ?: "Error desconocido")
-        }
-        catch(e : JSONException){
+        } catch (e: JSONException) {
             throw RuntimeException(e)
         }
         return resultado

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Calendario-->
+    <style name= "Estilo_ColoresCalendario" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/Negro_Fondo</item>
+        <item name="android:windowBackground">@color/Amarillo_constelacion</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/Estilo_BotonAceptar</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/Estilo_BotonCancelar</item>
+    </style>
+
+    <!--Botones del calendario, heredan de otro parent para que no sean redondeados los botones-->
+    <style name="Estilo_BotonAceptar" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/Negro_Fondo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Estilo_BotonCancelar" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/Negro_Fondo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+</resources>

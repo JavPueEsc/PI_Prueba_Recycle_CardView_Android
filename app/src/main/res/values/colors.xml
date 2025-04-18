@@ -9,4 +9,7 @@
     <color name="Gris_App">#232f3e</color>
     <color name="GrisClaro_App">#d4d4d4</color>
     <color name="Amarillo_App">#febd69</color>
+
+    <color name="Amarillo_constelacion">#D8B573</color>
+    <color name="Negro_Fondo">#151316</color>
 </resources>
