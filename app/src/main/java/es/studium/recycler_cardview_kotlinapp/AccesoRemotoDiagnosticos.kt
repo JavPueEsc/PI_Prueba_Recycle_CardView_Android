@@ -29,6 +29,15 @@ class AccesoRemotoDiagnosticos {
         return ejecutarPeticion(request)
     }
 
+    //Obtener diagnóstico por ID
+    fun obtenerDiagnosticoPorId(idDiagnostico: String): JSONArray {
+        val url = "http://192.168.0.217/ApiRestPracticaPruebaCardView/diagnosticos.php?idDiagnostico=$idDiagnostico"
+        val request = Request.Builder()
+            .url(url)
+            .build()
+        return ejecutarPeticion(request)
+    }
+
     // Metodo ejecutar la solicitud
     private fun ejecutarPeticion(request: Request): JSONArray {
         try {

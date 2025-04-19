@@ -8,13 +8,410 @@
     tools:context=".GenerarInformeActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/lbl_tituloInfoPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola"
+        android:text="Identificación del paciente"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloResumen"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <TextView
+        android:id="@+id/lbl_NUHSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NUHSA:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloInfoPaciente"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <TextView
+        android:id="@+id/lbl_paciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paciente:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_NUHSA"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <TextView
+        android:id="@+id/lbl_sexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloInfoPaciente"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/lbl_fechaNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha Nac.:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_paciente"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/lbl_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloInfoPaciente"
+        app:layout_constraintVertical_bias="0.13999999" />
+
+    <TextView
+        android:id="@+id/lbl_localidadPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Localidad:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_fechaNac"
+        app:layout_constraintVertical_bias="0.037" />
+
+
+    <TextView
+        android:id="@+id/lbl_cpPaciente"
+        android:layout_width="22dp"
+        android:layout_height="16dp"
+        android:text="C.P.:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_edad"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <TextView
+        android:id="@+id/lbl_tituloDatosDiagnostico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos del diagnóstico"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_localidadPaciente"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <TextView
+        android:id="@+id/lbl_fechaDiagnostico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha diag.:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloDatosDiagnostico"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <TextView
+        android:id="@+id/lbl_doctor_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor/a:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valoracion1"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <TextView
+        android:id="@+id/lbl_especialidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especialidad:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_doctor_a"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/lbl_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imagen de la lesión:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloDatosDiagnostico"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <ImageView
+        android:id="@+id/img_imagenInforme"
+        android:layout_width="289dp"
+        android:layout_height="144dp"
+
+        android:layout_marginBottom="76dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_imagen"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/lbl_valorProvincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jerez de la Frontera (Cádiz)"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_generarInforme"
+        app:layout_constraintEnd_toStartOf="@+id/lbl_cpPaciente"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toEndOf="@+id/lbl_localidadPaciente"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorFechaNac"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <TextView
+        android:id="@+id/lbl_tituloResumen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resumen del diagnóstico visual"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.035" />
+
+    <TextView
+        android:id="@+id/lbl_diagnostico1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diagnóstico visual:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_imagenInforme"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <TextView
+        android:id="@+id/lbl_valoracion1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valoracion:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_diagnostico1"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <Button
+        android:id="@+id/btn_generarInforme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generar Informe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valoracion1"
+        app:layout_constraintVertical_bias="0.831" />
+
+    <TextView
+        android:id="@+id/lbl_valorNUHSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AN0073847313"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_generarInforme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toEndOf="@+id/lbl_NUHSA"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloInfoPaciente"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <TextView
+        android:id="@+id/lbl_valorPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agustín Acosta Jaramillo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toEndOf="@+id/lbl_paciente"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorNUHSA"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/lbl_valorFechaNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09/10/1946"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lbl_edad"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toEndOf="@+id/lbl_fechaNac"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorPaciente"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/lbl_valorEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="79"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lbl_sexo"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/lbl_edad"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorPaciente"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/lbl_valorSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hombre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toEndOf="@+id/lbl_sexo"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorPaciente"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/lbl_valorCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11407"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toEndOf="@+id/lbl_cpPaciente"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorSexo"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        android:id="@+id/lbl_valorFechaDiasg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="valor fecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+
+        app:layout_constraintStart_toEndOf="@+id/lbl_fechaDiagnostico"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_tituloDatosDiagnostico"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/lbl_valorDoctor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="valor doctor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toEndOf="@+id/lbl_doctor_a"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valoracion1"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <TextView
+        android:id="@+id/lbl_valorEspecialidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Médico de cabecera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toEndOf="@+id/lbl_especialidad"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorDoctor1"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <TextView
+        android:id="@+id/lbl_valorDiagnostico1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="valor diagnóstico"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toEndOf="@+id/lbl_diagnostico1"
+        app:layout_constraintTop_toBottomOf="@+id/img_imagenInforme"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <TextView
+        android:id="@+id/lbl_valorValoracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="valor valoracion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/lbl_valoracion1"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorDiagnostico1"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <TextView
+        android:id="@+id/lbl_centroDiag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="centro de diagnóstico:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_especialidad"
+        app:layout_constraintVertical_bias="0.128" />
+
+    <TextView
+        android:id="@+id/lbl_valorCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="valor centro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toEndOf="@+id/lbl_centroDiag1"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_valorEspecialidad"
+        app:layout_constraintVertical_bias="0.128" />
 </androidx.constraintlayout.widget.ConstraintLayout>
