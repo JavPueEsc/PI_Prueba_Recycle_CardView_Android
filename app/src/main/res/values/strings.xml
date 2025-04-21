@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">recycler_CardView_KotlinApp</string>
-    <string name="take_photo">Take Photo</string>
-    <string name="load_photo">Load photo</string>
-    <string name="predict">Predict</string>
-    <string name="stop_capture">Stop Capture</string>
+    <string name="take_photo">Tomar Foto</string>
+    <string name="load_photo">Cargar Foto</string>
+    <string name="predict">Predecir</string>
+    <string name="stop_capture">Parar Captura</string>
 </resources>
